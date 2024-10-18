@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('phone_number', 20);
             $table->enum('gender', ['L', 'P']);
             $table->foreignId('program_id')->constrained();
-            $table->jsonb('details')->nullable()->default('{}');
+            $table->jsonb('details')->nullable();
             $table->timestamps();
         });
 

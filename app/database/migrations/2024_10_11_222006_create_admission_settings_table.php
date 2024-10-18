@@ -20,7 +20,7 @@ return new class extends Migration
             $table->longText('desc');
             $table->datetime('admission_period_start');
             $table->datetime('admission_period_end');
-            $table->jsonb('requirements')->default('{}');
+            $table->jsonb('requirements');
             $table->timestamps();
         });
     }

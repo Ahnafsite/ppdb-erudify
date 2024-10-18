@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('mother_name');
             $table->string('mother_occupation');
             $table->string('phone_number', 20);
-            $table->jsonb('details')->nullable()->default('{}');
+            $table->jsonb('details')->nullable();
             $table->timestamps();
         });
     }
