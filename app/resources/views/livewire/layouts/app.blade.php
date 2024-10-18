@@ -16,7 +16,8 @@
         </style>
 
         @filamentStyles
-        @vite('resources/css/app.css')
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        {{-- @vite('resources/css/app.css') --}}
     </head>
 
     <body class="antialiased">
@@ -33,7 +34,8 @@
         @livewire('notifications')
 
         @filamentScripts
-        @vite('resources/js/app.js')
+        {{-- @vite('resources/js/app.js') --}}
+        <script src="{{ asset('js/app.js') }}"></script>
         <script>
             // Ambil elemen-elemen yang dibutuhkan
             const mobileMenuButton = document.querySelector('button[aria-label="Open main menu"]');
