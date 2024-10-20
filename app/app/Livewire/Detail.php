@@ -3,6 +3,8 @@
 namespace App\Livewire;
 
 use App\Models\AdmissionSetting;
+use Error;
+use Exception;
 use Livewire\Component;
 
 class Detail extends Component
@@ -13,6 +15,9 @@ class Detail extends Component
     public function mount()
     {
         $this->admission = AdmissionSetting::where('slug', $this->slug)->first();
+        if(!$this->admission) {
+            abort(404);
+        }
     }
     public function render()
     {

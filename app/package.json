@@ -1,10 +1,11 @@
 {
     "private": true,
-    "type": "commonjs",
+    "type": "module",
     "scripts": {
-        "dev": "mix",
-        "watch": "mix watch",
-        "production": "mix --production",
+        "dev": "vite",
+        "watch": "vite build",
+        "production": "vite --production",
+        "css-compile":"npx tailwindcss -i ./public/frontend/assets/css/input.css -o ./public/frontend/assets/css/style.css --watch",
         "build-css": "postcss resources/css/app.css -o public/css/app.css"
     },
     "devDependencies": {
@@ -12,12 +13,13 @@
         "@tailwindcss/typography": "^0.5.15",
         "autoprefixer": "^10.4.20",
         "axios": "^1.7.4",
-        "laravel-mix": "^6.0.3",
         "postcss": "^8.4.47",
         "postcss-nesting": "^13.0.0",
         "resolve-url-loader": "^5.0.0",
-        "sass": "^1.80.2",
-        "sass-loader": "^12.6.0",
-        "tailwindcss": "^3.4.13"
+        "tailwindcss": "^3.4.14"
+    },
+    "dependencies": {
+        "laravel-vite-plugin": "^1.0.5",
+        "vite": "^5.4.9"
     }
 }

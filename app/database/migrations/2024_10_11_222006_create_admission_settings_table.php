@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('slug');
             $table->string('year');
+            $table->jsonb('contact_person');
             $table->longText('desc');
             $table->datetime('admission_period_start');
             $table->datetime('admission_period_end');

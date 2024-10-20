@@ -18,7 +18,7 @@ class EditAdmissionSetting extends EditRecord
         ];
     }
 
-    protected function mutateFormDataBeforeCreate(array $data): array
+    protected function mutateFormDataBeforeUpdate(array $data): array
     {
         $data['slug'] = Str::slug($data['title'], '-');
         return $data;

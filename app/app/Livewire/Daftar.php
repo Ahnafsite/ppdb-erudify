@@ -37,6 +37,9 @@ class Daftar extends Component implements HasForms
     public function mount(): void
     {
         $this->admission = AdmissionSetting::where('slug', $this->slug)->first();
+        if(!$this->admission) {
+            abort(404);
+        }
         $this->data['admission_setting_id'] = $this->admission->id;
         $this->form->fill();
     }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="id">
     <head>
         <meta charset="utf-8">
 
@@ -14,43 +14,30 @@
                 display: none !important;
             }
         </style>
-
+        <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="{{ asset('images/logo_erudify.ico') }}"
+        >
+        <!-- link stylesheet -->
+        @livewireStyles
         @filamentStyles
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        {{-- @vite('resources/css/app.css') --}}
+        @vite('resources/css/app.css')
+        <link rel="stylesheet" href="{{ asset('frontend/assets/css/icofont.min.css') }}" >
+        <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}" >
     </head>
-
-    <body class="antialiased">
-        <div class="mt-5">
-            <div class="bg-white">
-                @include('livewire.components.navigation')
-                <div class="relative px-6 isolate pt-14 lg:px-8">
-                    {{ $slot }}
-                </div>
-            </div>
-        </div>
-
-
-        @livewire('notifications')
-
+    <body class="relative font-inter font-normal text-base leading-[1.8] bg-bodyBg dark:bg-bodyBg-dark">
+        {{-- preloader here --}}
+        @include('livewire.components.header')
+        <main>
+            {{ $slot }}
+        </main>
+        @include('livewire.components.footer')
+        @livewireScripts
         @filamentScripts
-        {{-- @vite('resources/js/app.js') --}}
-        <script src="{{ asset('js/app.js') }}"></script>
-        <script>
-            // Ambil elemen-elemen yang dibutuhkan
-            const mobileMenuButton = document.querySelector('button[aria-label="Open main menu"]');
-            const mobileMenu = document.querySelector('div[role="dialog"]');
-            const closeMenuButton = document.querySelector('button[aria-label="Close menu"]');
-
-            // Fungsi untuk membuka menu
-            mobileMenuButton.addEventListener('click', function() {
-              mobileMenu.classList.remove('hidden'); // Tampilkan menu
-            });
-
-            // Fungsi untuk menutup menu
-            closeMenuButton.addEventListener('click', function() {
-              mobileMenu.classList.add('hidden'); // Sembunyikan menu
-            });
-        </script>
+        @livewire('notifications')
+        @vite('resources/js/app.js')
+        @include('livewire.components.scripts')
     </body>
+
 </html>

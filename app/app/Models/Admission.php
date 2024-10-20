@@ -13,8 +13,8 @@ class Admission extends Model
     const Types = AdmissionStatus::class;
 
     protected $casts = [
-        'admission_date' => 'date',
         'type' => AdmissionStatus::class,
+        'admission_date' => 'date',
     ];
 
     protected $fillable = [

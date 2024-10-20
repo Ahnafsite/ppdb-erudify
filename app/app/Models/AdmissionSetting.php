@@ -13,13 +13,16 @@ class AdmissionSetting extends Model
         'admission_period_start' => 'date',
         'admission_period_end' => 'date',
         'requirements' => 'array',
+        'contact_person' => 'array',
     ];
 
     protected $fillable = [
         'admission_period_start',
         'admission_period_end',
         'requirements',
-        'image'
+        'image',
+        'year',
+        'contact_person'
     ];
 
     public function attachments()

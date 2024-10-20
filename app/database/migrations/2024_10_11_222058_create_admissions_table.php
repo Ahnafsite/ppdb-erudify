@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('student_id')->constrained()->onDelete('cascade');
             $table->string('note')->nullable();
             $table->date('admission_date');
-            $table->smallInteger('type');
+            $table->enum('type', ['VERIFIED', 'PENDING', 'REVISION', 'REJECTED', 'ACCEPTED',]);
             $table->timestamps();
         });
     }

@@ -43,7 +43,7 @@ class AppPanelProvider extends PanelProvider
                 'danger' => Color::Rose,
                 'gray' => Color::Slate,
                 'info' => Color::Cyan,
-                'primary' => Color::Blue,
+                'primary' => Color::Teal,
                 'success' => Color::Emerald,
                 'warning' => Color::Orange,
             ])

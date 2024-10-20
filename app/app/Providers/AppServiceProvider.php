@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Filament\Pages\Registration;
 use App\Policies\PermissionPolicy;
 use App\Policies\RolePolicy;
+use Carbon\Carbon;
 use Filament\Facades\Filament;
 use Filament\Support\Colors\Color;
 use Filament\Support\Facades\FilamentColor;
@@ -29,6 +30,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+      config(['app.locale' => 'id']);
+	    Carbon::setLocale('id');
+
         Model::unguard();
         Gate::policy(Role::class, RolePolicy::class);
         Gate::policy(Permission::class, PermissionPolicy::class);
@@ -37,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
             'danger' => Color::Rose,
             'gray' => Color::Slate,
             'info' => Color::Cyan,
-            'primary' => Color::Blue,
+            'primary' => Color::Teal,
             'success' => Color::Emerald,
             'warning' => Color::Orange,
           ]);

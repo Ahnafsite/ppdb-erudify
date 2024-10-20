@@ -18,7 +18,6 @@
         @livewireStyles
         @filamentStyles
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        {{-- @vite('resources/css/app.css') --}}
     </head>
 
     <body class="antialiased">
@@ -26,7 +25,6 @@
 
         @livewireScripts
         @filamentScripts
-        {{-- @vite('resources/js/app.js') --}}
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

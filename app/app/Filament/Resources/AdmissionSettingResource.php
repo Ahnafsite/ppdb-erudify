@@ -88,11 +88,32 @@ class AdmissionSettingResource extends Resource
                             ->label('Tanggal Tutup')
                             ->seconds(false)
                             ->required(),
+                        Forms\Components\TextInput::make('contact_person.name')
+                            ->label('Narahubung')
+                            ->required(),
+                        Forms\Components\TextInput::make('contact_person.no_hp')
+                            ->label('No Hp/Whatsapp')
+                            ->prefix('+62')
+                            ->required(),
                     ])->columns(2),
+                Section::make('Program Studi')
+                    ->schema([
+                        Repeater::make('programs')
+                            ->label('')
+                            ->relationship()
+                            ->schema([
+                                TextInput::make('code')
+                                    ->label('Kode')
+                                    ->required(),
+                                TextInput::make('title')
+                                    ->label('Nama')
+                                    ->required(),
+                            ])
+                    ])->columns(1),
                 Section::make('Form Tambahan')
                     ->schema([
                         Repeater::make('requirements')
-                            ->label('Informasi Tambahan')
+                            ->label('')
                             ->schema([
                                 TextInput::make('input')
                                     ->label('Nama')
@@ -109,24 +130,11 @@ class AdmissionSettingResource extends Resource
                                     ->label('Wajib')
                             ])
                     ])->columns(1),
-                Section::make('Program Studi')
-                    ->schema([
-                        Repeater::make('programs')
-                            ->label('Program Studi')
-                            ->relationship()
-                            ->schema([
-                                TextInput::make('code')
-                                    ->label('Kode')
-                                    ->required(),
-                                TextInput::make('title')
-                                    ->label('Nama')
-                                    ->required(),
-                            ])
-                    ])->columns(1),
                 Section::make('Lampiran')
                     ->label('Lampiran')
                     ->schema([
                         Repeater::make('attachments')
+                            ->label('')
                             ->relationship()
                             ->schema([
                                 TextInput::make('name')
