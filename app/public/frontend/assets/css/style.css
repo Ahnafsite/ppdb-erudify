@@ -5676,6 +5676,10 @@ select{
   letter-spacing: -0.05em;
 }
 
+.tracking-wide{
+  letter-spacing: 0.025em;
+}
+
 .text-black{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -6512,6 +6516,11 @@ select{
   background-color: rgb(242 39 126 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-teal-800:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 94 89 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-white:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -6520,16 +6529,6 @@ select{
 .hover\:bg-whiteColor:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-emerald-800:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(6 95 70 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-teal-800:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 94 89 / var(--tw-bg-opacity));
 }
 
 .hover\:text-custom-600:hover{
@@ -7041,6 +7040,11 @@ select{
   background-color: rgba(var(--primary-500), var(--tw-bg-opacity));
 }
 
+.dark\:bg-teal-600:is(.dark *){
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 148 136 / var(--tw-bg-opacity));
+}
+
 .dark\:bg-transparent:is(.dark *){
   background-color: transparent;
 }
@@ -7056,11 +7060,6 @@ select{
 .dark\:bg-whiteColor-dark:is(.dark *){
   --tw-bg-opacity: 1;
   background-color: rgb(12 14 43 / var(--tw-bg-opacity));
-}
-
-.dark\:bg-teal-600:is(.dark *){
-  --tw-bg-opacity: 1;
-  background-color: rgb(13 148 136 / var(--tw-bg-opacity));
 }
 
 .dark\:fill-current:is(.dark *){
@@ -7253,9 +7252,9 @@ select{
   background-color: rgba(var(--c-400), 0.1);
 }
 
-.dark\:hover\:bg-emerald-700:hover:is(.dark *){
+.dark\:hover\:bg-teal-600:hover:is(.dark *){
   --tw-bg-opacity: 1;
-  background-color: rgb(4 120 87 / var(--tw-bg-opacity));
+  background-color: rgb(13 148 136 / var(--tw-bg-opacity));
 }
 
 .dark\:hover\:bg-white\/10:hover:is(.dark *){
@@ -7269,16 +7268,6 @@ select{
 .dark\:hover\:bg-whiteColor-dark:hover:is(.dark *){
   --tw-bg-opacity: 1;
   background-color: rgb(12 14 43 / var(--tw-bg-opacity));
-}
-
-.dark\:hover\:bg-teal-700:hover:is(.dark *){
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 118 110 / var(--tw-bg-opacity));
-}
-
-.dark\:hover\:bg-teal-600:hover:is(.dark *){
-  --tw-bg-opacity: 1;
-  background-color: rgb(13 148 136 / var(--tw-bg-opacity));
 }
 
 .dark\:hover\:text-custom-300:hover:is(.dark *){
@@ -7331,11 +7320,6 @@ select{
 .dark\:focus\:ring-primary-500:focus:is(.dark *){
   --tw-ring-opacity: 1;
   --tw-ring-color: rgba(var(--primary-500), var(--tw-ring-opacity));
-}
-
-.dark\:focus\:ring-teal-800:focus:is(.dark *){
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(17 94 89 / var(--tw-ring-opacity));
 }
 
 .dark\:focus\:ring-teal-600:focus:is(.dark *){
