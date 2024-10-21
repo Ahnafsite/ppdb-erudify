@@ -17,6 +17,7 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
@@ -272,6 +273,9 @@ class Daftar extends Component implements HasForms
                             return [];
                         }
                     ),
+                Checkbox::make('confirmation')
+                    ->label('Data yang saya isikan sudah benar')
+                    ->required()
             ])
             ->statePath('data')
             ->model(Student::class);
@@ -279,6 +283,7 @@ class Daftar extends Component implements HasForms
 
     public function create()
     {
+        unset($this->data['confirmation']);
         $this->data = $this->form->getState();
         $this->data['details'] = [];
         $this->data['admission_setting_id'] = $this->admission->id;

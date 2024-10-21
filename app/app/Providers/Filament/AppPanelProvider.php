@@ -28,6 +28,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use SolutionForest\FilamentTranslateField\FilamentTranslateFieldPlugin;
+use Filament\Navigation\MenuItem;
 
 class AppPanelProvider extends PanelProvider
 {
@@ -121,6 +122,13 @@ class AppPanelProvider extends PanelProvider
                   ]);
                 }
 
-              });
+              })
+            ->userMenuItems([
+                MenuItem::make()
+                    ->label('Beranda')
+                    ->url('/')
+                    ->icon('heroicon-o-home'),
+                // ...
+            ]);;
     }
 }
