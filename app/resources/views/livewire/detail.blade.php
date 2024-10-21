@@ -30,7 +30,7 @@
           <div class="container">
             <div class="text-center">
               <h1
-                class="pt-3 text-3xl font-bold md:text-size-40 2xl:text-size-55 text-blackColor dark:text-blackColor-dark mb-7 md:mb-6"
+                class="pt-3 text-3xl font-bold tracking-wide md:text-size-40 2xl:text-size-55 text-blackColor dark:text-blackColor-dark mb-7 md:mb-6"
               >
                 {{ ucwords(strtolower($admission->title)) }}
               </h1>
