@@ -48,6 +48,7 @@ class AppPanelProvider extends PanelProvider
                 'success' => Color::Emerald,
                 'warning' => Color::Orange,
             ])
+            ->favicon(asset('images/logo_erudify.ico'))
             ->brandLogo(fn () => view('vendor.filament.components.logo'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -82,6 +83,9 @@ class AppPanelProvider extends PanelProvider
                         ->items([
                           ...(AdmissionSettingResource::shouldRegisterNavigation() ? AdmissionSettingResource::getNavigationItems() : []),
                           ...(StudentResource::shouldRegisterNavigation() ? StudentResource::getNavigationItems() : []),
+                          NavigationItem::make('Beranda')
+                            ->icon('heroicon-o-home')
+                            ->url('/'),
                         ]),
                     ])
                     ->groups([
@@ -119,6 +123,9 @@ class AppPanelProvider extends PanelProvider
                       ->isActiveWhen(fn(): bool => request()->routeIs('filament.app.pages.registration'))
                       ->url(fn(): string => Registration::getUrl())
                       ->visible($isStudent),
+                    NavigationItem::make('Beranda')
+                      ->icon('heroicon-o-home')
+                      ->url('/'),
                   ]);
                 }
 
