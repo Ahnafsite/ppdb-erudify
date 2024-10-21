@@ -96,10 +96,10 @@ class AppPanelProvider extends PanelProvider
                             NavigationItem::make('Roles')
                               ->icon('heroicon-o-wrench-screwdriver')
                               ->isActiveWhen(fn(): bool => request()->routeIs([
-                                'filament.app.resources.roles.index',
-                                'filament.app.resources.roles.create',
-                                'filament.app.resources.roles.view',
-                                'filament.app.resources.roles.edit',
+                                'filament.member.resources.roles.index',
+                                'filament.member.resources.roles.create',
+                                'filament.member.resources.roles.view',
+                                'filament.member.resources.roles.edit',
                               ]))
                               ->url(fn(): string => '/member/roles'),
                           ] : []),
@@ -107,10 +107,10 @@ class AppPanelProvider extends PanelProvider
                             NavigationItem::make('Permission')
                               ->icon('heroicon-o-lock-closed')
                               ->isActiveWhen(fn(): bool => request()->routeIs([
-                                'filament.app.resources.permissions.index',
-                                'filament.app.resources.permissions.create',
-                                'filament.app.resources.permissions.view',
-                                'filament.app.resources.permissions.edit',
+                                'filament.member.resources.permissions.index',
+                                'filament.member.resources.permissions.create',
+                                'filament.member.resources.permissions.view',
+                                'filament.member.resources.permissions.edit',
                               ]))
                               ->url(fn(): string => '/member/permissions'),
                           ] : []),
@@ -119,8 +119,8 @@ class AppPanelProvider extends PanelProvider
                 } else {
                   return $builder->items([
                     NavigationItem::make('Pendaftaran')
-                      ->icon('heroicon-o-home')
-                      ->isActiveWhen(fn(): bool => request()->routeIs('filament.app.pages.registration'))
+                      ->icon('phosphor-student-bold')
+                      ->isActiveWhen(fn(): bool => request()->routeIs('filament.member.pages.registration'))
                       ->url(fn(): string => Registration::getUrl())
                       ->visible($isStudent),
                     NavigationItem::make('Beranda')

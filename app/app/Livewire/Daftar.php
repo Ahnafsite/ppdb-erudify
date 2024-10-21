@@ -9,6 +9,8 @@ use App\Models\Program;
 use App\Models\Student;
 use App\Models\User;
 use Carbon\Carbon;
+use Filament\Support\Enums\ActionSize;
+use Filament\Actions\Action;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
@@ -20,6 +22,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
+use Filament\Actions\Concerns\InteractsWithActions;
+use Filament\Actions\Contracts\HasActions;
 use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Notifications\Notification;
@@ -28,9 +32,10 @@ use Livewire\Component;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\WithFileUploads;
 
-class Daftar extends Component implements HasForms
+class Daftar extends Component implements HasForms, HasActions
 {
     use InteractsWithForms;
+    use InteractsWithActions;
     public ?array $data = [];
     public $slug;
     public $admission;
@@ -273,9 +278,6 @@ class Daftar extends Component implements HasForms
                             return [];
                         }
                     ),
-                Checkbox::make('confirmation')
-                    ->label('Data yang saya isikan sudah benar')
-                    ->required()
             ])
             ->statePath('data')
             ->model(Student::class);
@@ -283,7 +285,6 @@ class Daftar extends Component implements HasForms
 
     public function create()
     {
-        unset($this->data['confirmation']);
         $this->data = $this->form->getState();
         $this->data['details'] = [];
         $this->data['admission_setting_id'] = $this->admission->id;
@@ -377,6 +378,17 @@ class Daftar extends Component implements HasForms
             ->send();
         return redirect('/member')->with('success', 'Your account has been created and you have been logged in.');
 
+    }
+
+    public function createAction(): Action
+    {
+        return Action::make('create')
+            ->label('Simpan')
+            ->requiresConfirmation()
+            ->modalHeading('Simpan Data')
+            ->modalDescription('Apakah anda yakin data sudah benar ? Data tidak bisa diubah setelah disimpan')
+            ->modalSubmitActionLabel('Ya, Saya yakin')
+            ->action(fn () => $this->create());
     }
 
     public function render()

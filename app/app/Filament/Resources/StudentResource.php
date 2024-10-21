@@ -337,6 +337,12 @@ class StudentResource extends Resource
 
             ])
             ->actions([
+                Action::make('contact')
+                    ->label('Wali Murid')
+                    ->icon('phosphor-whatsapp-logo-light')
+                    ->action(function($record){
+                        return redirect('https://wa.me/62' . $record->parent->phone_number);
+                    }),
                 Action::make('verify')
                 ->label('Verifikasi')
                 ->color('success')

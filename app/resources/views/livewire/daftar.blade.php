@@ -71,9 +71,10 @@
                         <div>
                             {{ $this->form }}
                         </div>
-                        <button type="submit" class="inline-flex items-center px-4 py-3 mt-10 mb-10 text-sm font-bold text-center text-white rounded-lg bg-primaryColor hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 dark:bg-teal-600 dark:hover:bg-teal-600 dark:focus:ring-teal-600">
-                            Simpan
-                        </button>
+                        <div class="mt-10">
+                            {{ $this->createAction }}
+                            <x-filament-actions::modals />
+                        </div>
                     </form>
                   </div>
                 </div>
