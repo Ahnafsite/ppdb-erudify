@@ -477,10 +477,12 @@ class Registration extends Page implements HasForms, HasInfolists, HasActions
                                 TextEntry::make('program.title')
                                 ->label('Program Studi'),
                             ];
-                            foreach($record['details'] as $key => $value) {
-                                $details[] = TextEntry::make('details.'.$key)
-                                    ->label($key)
-                                    ->default($value);
+                            if($record['details']) {
+                                foreach($record['details'] as $key => $value) {
+                                    $details[] = TextEntry::make('details.'.$key)
+                                        ->label($key)
+                                        ->default($value);
+                                }
                             }
                             return $details;
                         }),
@@ -496,10 +498,12 @@ class Registration extends Page implements HasForms, HasInfolists, HasActions
                                     TextEntry::make('parent.mother_occupation')
                                         ->label('Pekerjaan Ibu'),
                                 ];
-                                foreach($record['parent']['details'] as $key => $value) {
-                                    $details[] = TextEntry::make('details.'.$key)
-                                        ->label($key)
-                                        ->default($value);
+                                if($record['parent']['details']) {
+                                    foreach($record['parent']['details'] as $key => $value) {
+                                        $details[] = TextEntry::make('details.'.$key)
+                                            ->label($key)
+                                            ->default($value);
+                                    }
                                 }
                                 return $details;
                             }
