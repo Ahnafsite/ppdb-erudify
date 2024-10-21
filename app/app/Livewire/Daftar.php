@@ -48,7 +48,7 @@ class Daftar extends Component implements HasForms
     {
         return $form
             ->schema([
-                Section::make('Akun Siswa')
+                Section::make('Buat Akun Siswa')
                     ->schema([
                         TextInput::make('user.email')
                             ->email()
