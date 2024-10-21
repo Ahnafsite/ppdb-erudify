@@ -35,8 +35,8 @@ class AppPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
-            ->id('admin')
-            ->path('admin')
+            ->id('member')
+            ->path('member')
             ->spa()
             ->login()
             ->colors([
@@ -96,7 +96,7 @@ class AppPanelProvider extends PanelProvider
                                 'filament.app.resources.roles.view',
                                 'filament.app.resources.roles.edit',
                               ]))
-                              ->url(fn(): string => '/app/roles'),
+                              ->url(fn(): string => '/member/roles'),
                           ] : []),
                           ...(auth()->user()->can('view-any Permission') ? [
                             NavigationItem::make('Permission')
@@ -107,7 +107,7 @@ class AppPanelProvider extends PanelProvider
                                 'filament.app.resources.permissions.view',
                                 'filament.app.resources.permissions.edit',
                               ]))
-                              ->url(fn(): string => '/app/permissions'),
+                              ->url(fn(): string => '/member/permissions'),
                           ] : []),
                         ]),
                     ]);

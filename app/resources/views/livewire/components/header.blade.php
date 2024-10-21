@@ -46,9 +46,9 @@
                 <li class="hidden lg:block">
                     @if (!request()->is('daftar/*'))
                                 @if (Auth::user())
-                                    <a href="{{ url('/app') }}" class="block py-2 border text-size-12 2xl:text-size-15 text-whiteColor bg-primaryColor border-primaryColor hover:text-primaryColor hover:bg-white px-15px rounded-standard dark:hover:bg-whiteColor-dark dark: dark:hover:text-whiteColor">Dashboard</a>
+                                    <a href="{{ url('/member') }}" class="block py-2 border text-size-12 2xl:text-size-15 text-whiteColor bg-primaryColor border-primaryColor hover:text-primaryColor hover:bg-white px-15px rounded-standard dark:hover:bg-whiteColor-dark dark: dark:hover:text-whiteColor">Dashboard</a>
                                 @else
-                                    <a href="{{ url('/app/login') }}" class="block py-2 border text-size-12 2xl:text-size-15 text-whiteColor bg-primaryColor border-primaryColor hover:text-primaryColor hover:bg-white px-15px rounded-standard dark:hover:bg-whiteColor-dark dark: dark:hover:text-whiteColor">Masuk</a>
+                                    <a href="{{ url('/member/login') }}" class="block py-2 border text-size-12 2xl:text-size-15 text-whiteColor bg-primaryColor border-primaryColor hover:text-primaryColor hover:bg-white px-15px rounded-standard dark:hover:bg-whiteColor-dark dark: dark:hover:text-whiteColor">Masuk</a>
                                 @endif
                             @endif
                 </li>
@@ -104,9 +104,9 @@
                       <div class="flex items-center gap-1">
                         @if (!request()->is('daftar/*'))
                             @if (Auth::user())
-                                <a href="{{ url('/app') }}" class="pb-3 text-sm font-medium leading-1 text-darkdeep1 pl-30px pt-7 hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor">Dashboard</a>
+                                <a href="{{ url('/member') }}" class="pb-3 text-sm font-medium leading-1 text-darkdeep1 pl-30px pt-7 hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor">Dashboard</a>
                             @else
-                                <a href="{{ url('/app/login') }}" class="pb-3 text-sm font-medium leading-1 text-darkdeep1 pl-30px pt-7 hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor">Masuk</a>
+                                <a href="{{ url('/member/login') }}" class="pb-3 text-sm font-medium leading-1 text-darkdeep1 pl-30px pt-7 hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor">Masuk</a>
                             @endif
                         @endif
                       </div>

@@ -162,7 +162,7 @@
                 </ul>
                 <div class="mt-30px" data-aos="fade-up">
                     @if (auth()->user()?->student()->exists())
-                        <a href="{{ url('/app/login') }}" class="inline-block border rounded text-size-15 text-whiteColor bg-primaryColor px-14 py-10px border-primaryColor hover:text-primaryColor hover:bg-whiteColor group dark:hover:text-whiteColor dark:hover:bg-whiteColor-dark">
+                        <a href="{{ url('/member/login') }}" class="inline-block border rounded text-size-15 text-whiteColor bg-primaryColor px-14 py-10px border-primaryColor hover:text-primaryColor hover:bg-whiteColor group dark:hover:text-whiteColor dark:hover:bg-whiteColor-dark">
                             Lanjutkan Pendaftaran
                         </a>
                     @else

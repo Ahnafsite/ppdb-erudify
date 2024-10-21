@@ -370,7 +370,7 @@ class Daftar extends Component implements HasForms
             ->body('Silahkan tunggu pengumuman selanjutnya')
             ->success() // Mark the notification as a success type
             ->send();
-        return redirect('/app')->with('success', 'Your account has been created and you have been logged in.');
+        return redirect('/member')->with('success', 'Your account has been created and you have been logged in.');
 
     }
 
