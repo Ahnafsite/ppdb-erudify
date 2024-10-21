@@ -14,6 +14,11 @@
                 display: none !important;
             }
         </style>
+        <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="{{ asset('images/logo_erudify.ico') }}"
+        >
 
         @livewireStyles
         @filamentStyles
